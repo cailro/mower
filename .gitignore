@@ -12,3 +12,7 @@ local.properties
 # Eclipse Core
 .project
 
+# Idea project
+*.iml
+*.ipr
+*.iws
