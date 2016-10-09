@@ -93,11 +93,11 @@ class Mower implements IMachine
 	}
 	
 	void addListener(IMachineListener l){
+        if(l == null) return;
 		listeners.add(l);
 	}
 	
 	private void notifyOnFinishEvent(){
-		
 		for(IMachineListener listener : listeners){
 			listener.onFinish(this);
 		}
