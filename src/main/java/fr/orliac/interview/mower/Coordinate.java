@@ -1,13 +1,14 @@
 package fr.orliac.interview.mower;
 
-public class Coords {
+public class Coordinate {
 
 	private int x;
 	private int y;
 	
-	public Coords(int x, int y) {
+	public Coordinate(int x, int y) {
 		this.x = x;
 		this.y = y;
+
 	}
 	
 	public int getX() {

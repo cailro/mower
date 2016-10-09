@@ -1,19 +1,23 @@
-package fr.orliac.interview.mower;
+package fr.orliac.interview.mower.app;
+
+import fr.orliac.interview.mower.Action;
+import fr.orliac.interview.mower.Coordinate;
+import fr.orliac.interview.mower.Orientation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mower implements IMachine
+
+class Mower implements IMachine
 {
-	private Coords coords;
-	private Coords bounds;
+	private Coordinate Coordinate, bounds;
 	private Orientation orientation;
 	
 	private List<Action> commands;
 	private List<IMachineListener> listeners;
 
-	public Mower(Coords coords, Orientation orientation, Coords bounds) {
-		this.coords = coords;
+	Mower(Coordinate Coordinate, Orientation orientation, Coordinate bounds) {
+		this.Coordinate = Coordinate;
 		this.orientation = orientation;
 		this.bounds = bounds;
 		
@@ -21,12 +25,11 @@ public class Mower implements IMachine
 		commands = new ArrayList<>();
 	}
 	
-	public void setCommands(List<Action> commands) {
+	void setCommands(List<Action> commands) {
 		this.commands = commands;
 	}
-	
-	public void start(){
-		
+
+	void start(){
 		for(Action action : commands){
 			execute(action);
 		}
@@ -42,14 +45,14 @@ public class Mower implements IMachine
 			turnRight();
 			break;
 		case MOVE:
-			goFoward();
+			moveForward();
 			break;
 		}
 	}
 
 	@Override
 	public void printPosition(){
-		System.out.println(coords.toString() + " " + orientation.toString());
+		System.out.println(Coordinate.toString() + " " + orientation.toString());
 	}
 
 	@Override
@@ -63,33 +66,33 @@ public class Mower implements IMachine
 	}
 
 	@Override
-	public void goFoward() {
+	public void moveForward() {
 		switch (orientation) {
 
 		case NORTH:
-			if(coords.getY() < bounds.getY()) coords.incY();
+			if(Coordinate.getY() < bounds.getY()) Coordinate.incY();
 			break;
 		case EAST:
-			if(coords.getX() < bounds.getX()) coords.incX();
+			if(Coordinate.getX() < bounds.getX()) Coordinate.incX();
 			break;
 		case SOUTH:
-			if(coords.getY() > 0) coords.decY();
+			if(Coordinate.getY() > 0) Coordinate.decY();
 			break;
 		case WEST:
-			if(coords.getX() > 0) coords.decX();
+			if(Coordinate.getX() > 0) Coordinate.decX();
 			break;
 		}
 	}
 	
-	public Coords getCoords() {
-		return coords;
+	Coordinate getCoordinate() {
+		return Coordinate;
 	}
 	
-	public Orientation getOrientation() {
+	Orientation getOrientation() {
 		return orientation;
 	}
 	
-	public void addListener(IMachineListener l){
+	void addListener(IMachineListener l){
 		listeners.add(l);
 	}
 	

@@ -1,51 +1,57 @@
 package fr.orliac.interview.mower;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-public class OrientationTest extends TestCase {
+public class OrientationTest {
 
-	protected void setUp() throws Exception {
-		super.setUp();
-	}
-
-	public void testLeftOfNorthShouldBeWest() {
+	@Test
+	public void leftOfNorthShouldBeWest() {
 		Orientation o = Orientation.NORTH;
-		assertSame(o.left(), Orientation.WEST);
+		Assert.assertSame(o.left(), Orientation.WEST);
 	}
 	
-	public void testLOfWestShouldBeSouth() {
+	@Test
+	public void leftOfWestShouldBeSouth() {
 		Orientation o = Orientation.WEST;
-		assertSame(o.left(), Orientation.SOUTH);
+		Assert.assertSame(o.left(), Orientation.SOUTH);
 	}
 	
-	public void testLOfSouthShouldBeEast() {
+	@Test
+	public void leftOfSouthShouldBeEast() {
 		Orientation o = Orientation.SOUTH;
-		assertSame(o.left(), Orientation.EAST);
+		Assert.assertSame(o.left(), Orientation.EAST);
 	}
 
-	public void testLOfEastShouldBeNorth() {
+	@Test
+	public void leftOfEastShouldBeNorth() {
 		Orientation o = Orientation.EAST;
-		assertSame(o.left(), Orientation.NORTH);
+		Assert.assertSame(o.left(), Orientation.NORTH);
 	}
 	
 	
-	public void testRightOfNorthShouldBeEast() {
+	@Test
+	public void rightOfNorthShouldBeEast() {
 		Orientation o = Orientation.NORTH;
-		assertSame(o.right(), Orientation.EAST);
+		Assert.assertSame(o.right(), Orientation.EAST);
 	}
 	
-	public void testRightOfEastShouldBeSouth() {
+	@Test
+	public void rightOfEastShouldBeSouth() {
 		Orientation o = Orientation.EAST;
-		assertSame(o.right(), Orientation.SOUTH);
+		Assert.assertSame(o.right(), Orientation.SOUTH);
 	}
 	
-	public void testRightOfSouthShouldBeWest() {
+	@Test
+	public void rightOfSouthShouldBeWest() {
 		Orientation o = Orientation.SOUTH;
-		assertSame(o.right(), Orientation.WEST);
+		Assert.assertSame(o.right(), Orientation.WEST);
 	}
 
-	public void testRightOfWestShouldBeNorth() {
+	@Test
+	public void rightOfWestShouldBeNorth() {
 		Orientation o = Orientation.WEST;
-		assertSame(o.right(), Orientation.NORTH);
+		Assert.assertSame(o.right(), Orientation.NORTH);
 	}
 }
