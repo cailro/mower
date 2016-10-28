@@ -24,8 +24,7 @@ public class MowerTest {
         Orientation expectedOrientation = Orientation.NORTH;
 
         Assert.assertSame(expectedOrientation, mower.getOrientation());
-        Assert.assertEquals(expectedCoordinate.getX(), mower.getCoordinate().getX());
-        Assert.assertEquals(expectedCoordinate.getY(), mower.getCoordinate().getY());
+        Assert.assertTrue(expectedCoordinate.equals(mower.getCoordinate()));
     }
 
     @Test
@@ -38,8 +37,7 @@ public class MowerTest {
         Orientation expectedOrientation = Orientation.EAST;
 
         Assert.assertSame(expectedOrientation, mower.getOrientation());
-        Assert.assertEquals(expectedCoordinate.getX(), mower.getCoordinate().getX());
-        Assert.assertEquals(expectedCoordinate.getY(), mower.getCoordinate().getY());
+        Assert.assertTrue(expectedCoordinate.equals(mower.getCoordinate()));
 
     }
 
@@ -53,8 +51,7 @@ public class MowerTest {
         Orientation expectedOrientation = Orientation.WEST;
 
         Assert.assertSame(expectedOrientation, mower.getOrientation());
-        Assert.assertEquals(expectedCoordinate.getX(), mower.getCoordinate().getX());
-        Assert.assertEquals(expectedCoordinate.getY(), mower.getCoordinate().getY());
+        Assert.assertTrue(expectedCoordinate.equals(mower.getCoordinate()));
     }
 
 }

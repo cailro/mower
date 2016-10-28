@@ -12,7 +12,6 @@ class Mower implements IMachine
 {
 	private Coordinate Coordinate, bounds;
 	private Orientation orientation;
-	
 	private List<Action> commands;
 	private List<IMachineListener> listeners;
 
